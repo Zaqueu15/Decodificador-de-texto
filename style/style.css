@@ -170,7 +170,7 @@ main{
     color: var(--cor-texto-primaria);
     resize: none;
     outline: none;
-    height: auto;
+    height: 100%;
     width: auto;
 }
 #copiar{
