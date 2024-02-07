@@ -55,6 +55,7 @@ function aplicarCss (){
     document.querySelector("#resultado").style.justifyContent = "space-between";
     document.querySelector("#mensagem-botao").style.textAlign = "start";
     document.querySelector("#mensagem-botao").style.height = "100%";
+    document.querySelector("#mensagem").style.height = "100%";
     document.querySelector("#mensagem-botao").style.width = "100%";
     document.querySelector("#copiar").removeAttribute("hidden");
 }
