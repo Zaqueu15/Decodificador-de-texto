@@ -45,8 +45,6 @@ function verificarTextoCss(){
         document.querySelector("#resultado").style.justifyContent = "center";
         document.querySelector("#mensagem-botao").style.textAlign = "center";
         document.querySelector("#mensagem-botao").innerHTML = "<h1>Nenhuma mensagem encontrada</h1><p>Digite um texto que você deseja criptografar ou descriptografar.</p>";
-        document.querySelector("#mensagem-botao").style.height = "auto";
-        document.querySelector("#mensagem-botao").style.width = "auto";
         document.querySelector("#copiar").setAttribute("hidden", "true");
     }
 }
@@ -54,14 +52,11 @@ function aplicarCss (){
     document.querySelector(".imagem-texto").setAttribute("hidden", "true");
     document.querySelector("#resultado").style.justifyContent = "space-between";
     document.querySelector("#mensagem-botao").style.textAlign = "start";
-    document.querySelector("#mensagem-botao").style.height = "100%";
-    document.querySelector("#mensagem").style.height = "100%";
-    document.querySelector("#mensagem-botao").style.width = "100%";
     document.querySelector("#copiar").removeAttribute("hidden");
 }
 function inserirHtml(){
     let inserirTexto = document.querySelector("#mensagem-botao");
-    inserirTexto.innerHTML = "<textarea id='mensagem'>" + textoSaida + "</textarea>";
+    inserirTexto.innerHTML = "<p id='mensagem'>" + textoSaida + "</p>";
 }
 function obterArrayEntrada(){
     textoEntrada = document.querySelector('.criptografador_entrada').value;
@@ -71,6 +66,6 @@ function obterArrayEntrada(){
 }
 function copiarTexto(){
     let textoCopiado = document.querySelector("#mensagem");
-    textoCopiado.select();
-    document.execCommand("copy");
+    navigator.clipboard.writeText(textoCopiado.innerHTML);
+ 
 }
